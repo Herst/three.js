@@ -171,7 +171,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 		var te = this.object.matrix.elements;
 
 		// get Y column of matrix
-		panOffset.set( te[ 4 ], te[ 5 ], te[ 6 ] );
+		panOffset.set( te[ 4 ], 0, te[ 6 ] ).normalize();
 		panOffset.multiplyScalar( distance );
 		
 		pan.add( panOffset );
